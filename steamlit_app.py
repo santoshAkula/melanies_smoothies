@@ -5,7 +5,7 @@ from snowflake.snowpark.functions import col
 from snowflake.snowpark.functions import when_matched
 import requests  
 
-st.text(smoothiefroot_response)
+
 # Write directly to the app
 st.title(f"Customize your Soomthie")
 st.write(
