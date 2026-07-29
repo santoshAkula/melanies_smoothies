@@ -3,7 +3,9 @@ import streamlit as st
 #from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 from snowflake.snowpark.functions import when_matched
+import requests  
 
+st.text(smoothiefroot_response)
 # Write directly to the app
 st.title(f"Customize your Soomthie")
 st.write(
@@ -44,6 +46,8 @@ time_to_insert = st.button('Submit Order')
 if time_to_insert:
     session.sql(my_insert_stmt).collect()
     st.success('Your Smoothie is ordered!', icon="✅")
+
+smoothiefroot_response = requests.get("[https://my.smoothiefroot.com/api/fruit/watermelon](https://my.smoothiefroot.com/api/fruit/watermelon)")  
 
 
     
